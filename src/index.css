@@ -3,13 +3,21 @@
 }
 
 .input-field label {
-    color: rebeccapurple;
+    color: gray;
 }
 
 .input-field label {
-    color: rebeccapurple;
+    color: gray;
 }
 
 .input-field input[type=text]:focus + label {
-    color: rebeccapurple;
+    color: gray;
+}
+
+.todo-list__empty {
+    margin-top: 50px;
+    text-align: center;
+    color: gray;
+    font-size: 20px;
+    font-weight: lighter;
 }

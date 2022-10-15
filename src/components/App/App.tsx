@@ -15,7 +15,7 @@ const App = () => {
         }
         setTasks([...tasks, task])
     }
-  
+
     return (
         <div className="container">
             <form id='todoForm' name='todoForm' className='input-field' onSubmit={submitHandler}>
@@ -23,6 +23,9 @@ const App = () => {
                        placeholder='Введите необходимую задачу'/>
                 <label htmlFor='todo' className='active'>Добавить задачу</label>
             </form>
+            <div className='todo-list'>
+                <p className='todo-list__empty'>Список задач пуст</p>
+            </div>
         </div>
     );
 }
