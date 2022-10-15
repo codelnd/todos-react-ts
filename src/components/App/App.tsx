@@ -14,7 +14,7 @@ const App = () => {
             isComplete: false
         }
         setTasks([...tasks, task])
-
+        inputRef.current!.value = ''
     }
 
     return (
@@ -33,7 +33,8 @@ const App = () => {
                                 <label className='todo-list__task-wrp'>
                                     <input type="checkbox"
                                            checked={el.isComplete}/>
-                                    <span className='todo-list__complete todo-list__complete_decorated'>{el.title}</span>
+                                    <span
+                                        className='todo-list__complete todo-list__complete_decorated'>{el.title}</span>
                                     <i className='material-icons black-text'>clear</i>
                                 </label>
                             </li>
