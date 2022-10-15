@@ -1,10 +1,10 @@
 import React from 'react';
-import './App.css';
+import {Form} from "../Form/Form";
 
-function App() {
+const App = () => {
     return (
         <div className="container">
-
+            <Form/>
         </div>
     );
 }

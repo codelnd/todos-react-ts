@@ -1,0 +1,15 @@
+.input-field {
+    margin-top: 50px;
+}
+
+.input-field label {
+    color: rebeccapurple;
+}
+
+.input-field label {
+    color: rebeccapurple;
+}
+
+.input-field input[type=text]:focus + label {
+    color: rebeccapurple;
+}
