@@ -2,22 +2,30 @@
     margin-top: 50px;
 }
 
-.input-field label {
-    color: gray;
-}
-
-.input-field label {
-    color: gray;
-}
-
-.input-field input[type=text]:focus + label {
-    color: gray;
-}
-
 .todo-list__empty {
     margin-top: 50px;
     text-align: center;
-    color: gray;
     font-size: 20px;
     font-weight: lighter;
+}
+
+.todo-list__task-wrp {
+    box-shadow: 3px 3px 8px 1px rgba(34, 60, 80, 0.2);
+    padding: 8px;
+    margin-top: 30px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+    border-radius: 10px;
+}
+
+.todo-list__complete {
+    color: #505050;
+}
+
+.todo-list__complete_decorated {
+    color: #b4b4b4;
+    text-decoration: line-through;
 }
