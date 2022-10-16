@@ -4,7 +4,7 @@ import {ITodoEl} from "../../utils/models";
 
 const App = () => {
     const [tasks, setTasks] = useState<ITodoEl[]>([]);
-    const inputRef = useRef<HTMLInputElement>(null)
+
 
     useEffect(() => {
         const tasksFromStorage = JSON.parse(localStorage.getItem('tasks') || '[]') as ITodoEl[]
@@ -15,19 +15,6 @@ const App = () => {
         localStorage.setItem('tasks', JSON.stringify(tasks))
     }, [tasks])
 
-
-    const submitHandler = (e: React.ChangeEvent<HTMLFormElement>) => {
-        e.preventDefault()
-        const task = {
-            id: Date.now(),
-            title: inputRef.current!.value,
-            isComplete: false
-        }
-        if (inputRef.current!.value !== '') {
-            setTasks([task, ...tasks])
-        }
-        inputRef.current!.value = ''
-    }
 
     const removeHandler = (id: number) => {
         setTasks(prevState => tasks.filter(el => el.id !== id)
@@ -47,11 +34,7 @@ const App = () => {
     return (
         <div className="container">
             <h1 className='todo__title'>{`Количество дел: ${tasks.length}`}</h1>
-            <form id='todoForm' name='todoForm' className='input-field' onSubmit={submitHandler}>
-                <input ref={inputRef} type='text' id='todo' name='todo'
-                       placeholder='Введите необходимую задачу' autoComplete='off'/>
-                <label htmlFor='todo' className='active'>Добавить задачу</label>
-            </form>
+            <Form tasks={tasks} onTasks={setTasks}/>
             <div className='todo-list'>
                 {tasks.length === 0 ? <p className='todo-list__empty'>Список задач пуст</p> :
                     <ul className='todo-list__tasks'>
