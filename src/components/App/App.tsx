@@ -22,6 +22,15 @@ const App = () => {
         )
     }
 
+    const completeHandler = (id: number) => {
+        setTasks(prevState => tasks.map(el => {
+            if (el.id === id) {
+                el.isComplete = !el.isComplete
+            }
+            return el
+        }))
+    }
+
 
     return (
         <div className="container">
@@ -43,7 +52,7 @@ const App = () => {
                             <li className={taskClass.join(' ')} key={el.id}>
                                 <label className='todo-list__task-wrp'>
                                     <input type="checkbox"
-                                           checked={el.isComplete}/>
+                                           checked={el.isComplete} onChange={() => completeHandler(el.id)}/>
                                     <span
                                         className='todo-list__title'>{el.title}</span>
                                     <i className='material-icons black-text'
