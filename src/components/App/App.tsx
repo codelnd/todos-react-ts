@@ -23,7 +23,9 @@ const App = () => {
             title: inputRef.current!.value,
             isComplete: false
         }
-        setTasks([task, ...tasks])
+        if (inputRef.current!.value !== '') {
+            setTasks([task, ...tasks])
+        }
         inputRef.current!.value = ''
     }
 
