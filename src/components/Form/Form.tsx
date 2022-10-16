@@ -4,7 +4,7 @@ import { ITodoEl } from "../../utils/models";
 interface IFormProps {
   tasks: ITodoEl[];
 
-  onTasks([]): void;
+  onTasks(p: (prevState: ITodoEl[]) => ITodoEl[]): void;
 }
 
 export const Form = ({ tasks, onTasks }: IFormProps) => {
@@ -18,7 +18,7 @@ export const Form = ({ tasks, onTasks }: IFormProps) => {
       isComplete: false,
     };
     if (inputRef.current!.value !== "") {
-      onTasks([task, ...tasks]);
+      onTasks((prevState) => [task, ...tasks]);
     }
     inputRef.current!.value = "";
   };
