@@ -6,10 +6,15 @@ const App = () => {
     const [tasks, setTasks] = useState<ITodoEl[]>([]);
     const inputRef = useRef<HTMLInputElement>(null)
 
-    const tasksFromStorage = JSON.parse(localStorage.getItem('tasks') || '[]') as ITodoEl[]
-    localStorage.setItem('tasks', JSON.stringify(tasks))
+    useEffect(() => {
+        const tasksFromStorage = JSON.parse(localStorage.getItem('tasks') || '[]') as ITodoEl[]
+    }, [])
 
-    
+    useEffect(() => {
+        localStorage.setItem('tasks', JSON.stringify(tasks))
+    }, [tasks])
+
+
     const submitHandler = (e: React.ChangeEvent<HTMLFormElement>) => {
         e.preventDefault()
         const task = {
