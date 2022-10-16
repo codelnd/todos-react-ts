@@ -21,11 +21,13 @@
     border-radius: 10px;
 }
 
-.todo-list__complete {
+.todo-list__title {
     color: #505050;
 }
 
-.todo-list__complete_decorated {
+.todo-list__task.todo-list__task_complete span {
     color: #b4b4b4;
     text-decoration: line-through;
 }
+
+

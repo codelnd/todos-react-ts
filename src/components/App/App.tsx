@@ -13,9 +13,11 @@ const App = () => {
             title: inputRef.current!.value,
             isComplete: false
         }
-        setTasks([...tasks, task])
+        setTasks([task, ...tasks])
         inputRef.current!.value = ''
     }
+
+
 
     return (
         <div className="container">
@@ -28,13 +30,18 @@ const App = () => {
                 <p className='todo-list__empty'>Список задач пуст</p>
                 <ul className='todo-list__tasks'>
                     {tasks.map(el => {
+                        const taskClass = ['todo-list__task']
+                        if (el.isComplete) {
+                            taskClass.push('todo-list__task_complete')
+                        }
+
                         return (
-                            <li className='todo-list__task' key={el.id}>
+                            <li className={taskClass.join(' ')} key={el.id}>
                                 <label className='todo-list__task-wrp'>
                                     <input type="checkbox"
                                            checked={el.isComplete}/>
                                     <span
-                                        className='todo-list__complete todo-list__complete_decorated'>{el.title}</span>
+                                        className='todo-list__title'>{el.title}</span>
                                     <i className='material-icons black-text'>clear</i>
                                 </label>
                             </li>
