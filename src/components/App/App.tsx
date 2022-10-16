@@ -1,10 +1,12 @@
-import React, {useRef, useState} from 'react';
+import React, {useRef, useState, useEffect} from 'react';
 import {Form} from "../Form/Form";
 import {ITodoEl} from "../../utils/models";
 
 const App = () => {
     const [tasks, setTasks] = useState<ITodoEl[]>([]);
     const inputRef = useRef<HTMLInputElement>(null)
+
+    const tasksFromStorage = JSON.parse(localStorage.getItem('tasks') || '[]') as ITodoEl[]
 
     const submitHandler = (e: React.ChangeEvent<HTMLFormElement>) => {
         e.preventDefault()
