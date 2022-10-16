@@ -8,6 +8,7 @@ const App = () => {
 
     useEffect(() => {
         const tasksFromStorage = JSON.parse(localStorage.getItem('tasks') || '[]') as ITodoEl[]
+        setTasks(tasksFromStorage)
     }, [])
 
     useEffect(() => {
