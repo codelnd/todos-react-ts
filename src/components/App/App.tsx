@@ -40,28 +40,30 @@ const App = () => {
                 <label htmlFor='todo' className='active'>Добавить задачу</label>
             </form>
             <div className='todo-list'>
-                <p className='todo-list__empty'>Список задач пуст</p>
-                <ul className='todo-list__tasks'>
-                    {tasks.map(el => {
-                        const taskClass = ['todo-list__task']
-                        if (el.isComplete) {
-                            taskClass.push('todo-list__task_complete')
-                        }
+                {tasks.length === 0 ? <p className='todo-list__empty'>Список задач пуст</p> :
+                    <ul className='todo-list__tasks'>
+                        {tasks.map(el => {
+                            const taskClass = ['todo-list__task']
+                            if (el.isComplete) {
+                                taskClass.push('todo-list__task_complete')
+                            }
 
-                        return (
-                            <li className={taskClass.join(' ')} key={el.id}>
-                                <label className='todo-list__task-wrp'>
-                                    <input type="checkbox"
-                                           checked={el.isComplete} onChange={() => completeHandler(el.id)}/>
-                                    <span
-                                        className='todo-list__title'>{el.title}</span>
-                                    <i className='material-icons black-text'
-                                       onClick={() => removeHandler(el.id)}>clear</i>
-                                </label>
-                            </li>
-                        )
-                    })}
-                </ul>
+                            return (
+                                <li className={taskClass.join(' ')} key={el.id}>
+                                    <label className='todo-list__task-wrp'>
+                                        <input type="checkbox"
+                                               checked={el.isComplete} onChange={() => completeHandler(el.id)}/>
+                                        <span
+                                            className='todo-list__title'>{el.title}</span>
+                                        <i className='material-icons black-text'
+                                           onClick={() => removeHandler(el.id)}>clear</i>
+                                    </label>
+                                </li>
+                            )
+                        })}
+                    </ul>
+                }
+
             </div>
         </div>
     );
