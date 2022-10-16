@@ -7,7 +7,9 @@ const App = () => {
     const inputRef = useRef<HTMLInputElement>(null)
 
     const tasksFromStorage = JSON.parse(localStorage.getItem('tasks') || '[]') as ITodoEl[]
+    localStorage.setItem('tasks', JSON.stringify(tasks))
 
+    
     const submitHandler = (e: React.ChangeEvent<HTMLFormElement>) => {
         e.preventDefault()
         const task = {
