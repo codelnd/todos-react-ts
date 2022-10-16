@@ -18,12 +18,12 @@ const App = () => {
   }, [tasks]);
 
   const removeHandler = (id: number) => {
-    setTasks((prevState) => tasks.filter((el) => el.id !== id));
+    setTasks((prevState) => prevState.filter((el) => el.id !== id));
   };
 
   const completeHandler = (id: number) => {
     setTasks((prevState) =>
-      tasks.map((el) => {
+      prevState.map((el) => {
         if (el.id === id) {
           el.isComplete = !el.isComplete;
         }
