@@ -17,6 +17,10 @@ const App = () => {
         inputRef.current!.value = ''
     }
 
+    const removeHandler = (id: number) => {
+        setTasks(prevState => tasks.filter(el => el.id !== id)
+        )
+    }
 
 
     return (
@@ -42,7 +46,8 @@ const App = () => {
                                            checked={el.isComplete}/>
                                     <span
                                         className='todo-list__title'>{el.title}</span>
-                                    <i className='material-icons black-text'>clear</i>
+                                    <i className='material-icons black-text'
+                                       onClick={() => removeHandler(el.id)}>clear</i>
                                 </label>
                             </li>
                         )
