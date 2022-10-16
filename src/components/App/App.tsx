@@ -44,6 +44,7 @@ const App = () => {
 
     return (
         <div className="container">
+            <h1 className='todo__title'>{`Количество дел: ${tasks.length}`}</h1>
             <form id='todoForm' name='todoForm' className='input-field' onSubmit={submitHandler}>
                 <input ref={inputRef} type='text' id='todo' name='todo'
                        placeholder='Введите необходимую задачу' autoComplete='off'/>
