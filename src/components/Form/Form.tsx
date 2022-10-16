@@ -12,7 +12,7 @@ export const Form = ({ tasks, onTasks }: IFormProps) => {
 
   const submitHandler = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const task = {
+    const task: ITodoEl = {
       id: Date.now(),
       title: inputRef.current!.value,
       isComplete: false,
