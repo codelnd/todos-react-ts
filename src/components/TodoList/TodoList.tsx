@@ -4,12 +4,25 @@ import { ITodoEl } from "../../utils/models";
 interface IFormProps {
   tasks: ITodoEl[];
 
-  onRemove(id: number): void;
-
-  onComplete(id: number): void;
+  onTasks(p: (prevState: ITodoEl[]) => ITodoEl[]): void;
 }
 
-export const TodoList = ({ tasks, onRemove, onComplete }: IFormProps) => {
+export const TodoList = ({ tasks, onTasks }: IFormProps) => {
+  const removeHandler = (id: number) => {
+    onTasks((prevState) => prevState.filter((el) => el.id !== id));
+  };
+
+  const completeHandler = (id: number) => {
+    onTasks((prevState) =>
+      prevState.map((el) => {
+        if (el.id === id) {
+          el.isComplete = !el.isComplete;
+        }
+        return el;
+      })
+    );
+  };
+
   return (
     <div className="todo-list">
       {tasks.length === 0 ? (
@@ -28,12 +41,12 @@ export const TodoList = ({ tasks, onRemove, onComplete }: IFormProps) => {
                   <input
                     type="checkbox"
                     checked={el.isComplete}
-                    onChange={() => onComplete(el.id)}
+                    onChange={() => completeHandler(el.id)}
                   />
                   <span className="todo-list__title">{el.title}</span>
                   <i
                     className="material-icons black-text"
-                    onClick={() => onRemove(el.id)}
+                    onClick={() => removeHandler(el.id)}
                   >
                     clear
                   </i>
