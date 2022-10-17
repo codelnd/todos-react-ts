@@ -46,7 +46,7 @@ export const TodoList = ({ tasks, onTasks }: IFormProps) => {
                   <span className="todo-list__title">{el.title}</span>
                   <i
                     className="material-icons black-text"
-                    onClick={() => removeHandler(el.id)}
+                    onClick={removeHandler.bind(null, el.id)}
                   >
                     clear
                   </i>
