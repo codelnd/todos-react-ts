@@ -41,7 +41,7 @@ export const TodoList = ({ tasks, onTasks }: IFormProps) => {
                   <input
                     type="checkbox"
                     checked={el.isComplete}
-                    onChange={() => completeHandler(el.id)}
+                    onChange={completeHandler.bind(null, el.id)}
                   />
                   <span className="todo-list__title">{el.title}</span>
                   <i
