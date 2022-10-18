@@ -7,5 +7,13 @@ interface IStorageProps {
 }
 
 export const useLocalStorage = ({ initialValue, key }: IStorageProps) => {
-  const [value, setValue] = useState();
+  const [value, setValue] = useState(getValue);
+
+  function getValue() {
+    const storage = localStorage.getItem(key);
+    if (storage) {
+      return JSON.parse(storage);
+    }
+    return initialValue;
+  }
 };
