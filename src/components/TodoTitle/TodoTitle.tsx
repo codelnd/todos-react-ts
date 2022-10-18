@@ -1,4 +1,4 @@
-import { StyledTitle } from "../../styled-components/StyledTitle";
+import { StyledTitle } from "../../styled-components/StyledTitle/StyledTitle";
 
 interface ITodoTitleProps {
   length: string;

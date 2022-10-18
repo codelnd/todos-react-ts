@@ -2,6 +2,7 @@ import { Form } from "../Form/Form";
 import { TodoList } from "../TodoList/TodoList";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { TodoTitle } from "../TodoTitle/TodoTitle";
+import { Container } from "../Container/Container";
 
 const App = () => {
   const [tasks, setTasks] = useLocalStorage({
@@ -10,11 +11,11 @@ const App = () => {
   });
 
   return (
-    <div className="container">
+    <Container>
       <TodoTitle length={tasks.length} />
       <Form tasks={tasks} onTasks={setTasks} />
       <TodoList tasks={tasks} onTasks={setTasks} />
-    </div>
+    </Container>
   );
 };
 
