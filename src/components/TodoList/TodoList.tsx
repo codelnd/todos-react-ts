@@ -1,5 +1,6 @@
 import React from "react";
 import { ITodo } from "../../utils/models";
+import { EmptyList } from "../EmptyList/EmptyList";
 
 interface IFormProps {
   tasks: ITodo[];
@@ -26,7 +27,7 @@ export const TodoList = ({ tasks, onTasks }: IFormProps) => {
   return (
     <div className="todo-list">
       {tasks.length === 0 ? (
-        <p className="todo-list__empty">Список задач пуст</p>
+        <EmptyList />
       ) : (
         <ul className="todo-list__tasks">
           {tasks.map((el) => {
