@@ -1,5 +1,11 @@
 import { useState } from "react";
+import { ITodoEl } from "../utils/models";
 
-export const useLocalStorage = () => {
-  const [storageValue, setStorageValue] = useState();
+interface IStorageProps {
+  initialValue: ITodoEl[] | [];
+  key: string;
+}
+
+export const useLocalStorage = ({ initialValue, key }: IStorageProps) => {
+  const [value, setValue] = useState();
 };
