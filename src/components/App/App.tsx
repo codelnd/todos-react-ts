@@ -1,20 +1,18 @@
 import { Form } from "../Form/Form";
-import { ITodoEl } from "../../utils/models";
 import { TodoList } from "../TodoList/TodoList";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 const App = () => {
-  const tasks: ITodoEl[] = [];
-  const [storageTasks, setStorageTasks] = useLocalStorage({
-    initialValue: tasks,
+  const [tasks, setTasks] = useLocalStorage({
+    initialValue: [],
     key: "tasks",
   });
 
   return (
     <div className="container">
-      <h1 className="todo__title">{`Количество дел: ${storageTasks.length}`}</h1>
-      <Form tasks={storageTasks} onTasks={setStorageTasks} />
-      <TodoList tasks={storageTasks} onTasks={setStorageTasks} />
+      <h1 className="todo__title">{`Количество дел: ${tasks.length}`}</h1>
+      <Form tasks={tasks} onTasks={setTasks} />
+      <TodoList tasks={tasks} onTasks={setTasks} />
     </div>
   );
 };
