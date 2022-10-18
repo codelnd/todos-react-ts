@@ -1,10 +1,10 @@
 import React, { useRef } from "react";
-import { ITodoEl } from "../../utils/models";
+import { ITodo } from "../../utils/models";
 
 interface IFormProps {
-  tasks: ITodoEl[];
+  tasks: ITodo[];
 
-  onTasks(p: (prevState: ITodoEl[]) => ITodoEl[]): void;
+  onTasks(p: (prevState: ITodo[]) => ITodo[]): void;
 }
 
 export const Form = ({ tasks, onTasks }: IFormProps) => {
@@ -12,7 +12,7 @@ export const Form = ({ tasks, onTasks }: IFormProps) => {
 
   const submitHandler = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const task: ITodoEl = {
+    const task: ITodo = {
       id: Date.now(),
       title: inputRef.current!.value,
       isComplete: false,

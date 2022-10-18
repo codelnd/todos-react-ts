@@ -1,10 +1,10 @@
 import React from "react";
-import { ITodoEl } from "../../utils/models";
+import { ITodo } from "../../utils/models";
 
 interface IFormProps {
-  tasks: ITodoEl[];
+  tasks: ITodo[];
 
-  onTasks(p: (prevState: ITodoEl[]) => ITodoEl[]): void;
+  onTasks(p: (prevState: ITodo[]) => ITodo[]): void;
 }
 
 export const TodoList = ({ tasks, onTasks }: IFormProps) => {

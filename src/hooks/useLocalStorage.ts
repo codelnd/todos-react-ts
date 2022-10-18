@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { ITodoEl } from "../utils/models";
+import { ITodo } from "../utils/models";
 
 interface IStorageProps {
-  initialValue: ITodoEl[] | [];
+  initialValue: ITodo[] | [];
   key: string;
 }
 

@@ -1,4 +1,4 @@
-export interface ITodoEl {
+export interface ITodo {
   id: number;
   title: string;
   isComplete: boolean;
