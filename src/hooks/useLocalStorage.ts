@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ITodoEl } from "../utils/models";
 
 interface IStorageProps {
@@ -9,6 +9,10 @@ interface IStorageProps {
 export const useLocalStorage = ({ initialValue, key }: IStorageProps) => {
   const [value, setValue] = useState(getValue);
 
+  useEffect(() => {
+    localStorage.setItem(key, JSON.stringify(value));
+  }, [value]);
+
   function getValue() {
     const storage = localStorage.getItem(key);
     if (storage) {
@@ -16,4 +20,6 @@ export const useLocalStorage = ({ initialValue, key }: IStorageProps) => {
     }
     return initialValue;
   }
+
+  return [value, setValue];
 };
