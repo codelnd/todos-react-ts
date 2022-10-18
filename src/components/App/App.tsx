@@ -1,11 +1,10 @@
-import React, { useState } from "react";
 import { Form } from "../Form/Form";
 import { ITodoEl } from "../../utils/models";
 import { TodoList } from "../TodoList/TodoList";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 const App = () => {
-  const [tasks] = useState<ITodoEl[]>([]);
+  const tasks: ITodoEl[] = [];
   const [storageTasks, setStorageTasks] = useLocalStorage({
     initialValue: tasks,
     key: "tasks",
