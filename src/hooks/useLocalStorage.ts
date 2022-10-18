@@ -11,7 +11,7 @@ export const useLocalStorage = ({ initialValue, key }: IStorageProps) => {
 
   useEffect(() => {
     localStorage.setItem(key, JSON.stringify(value));
-  }, [value]);
+  }, [value, key]);
 
   function getValue() {
     const storage = localStorage.getItem(key);
