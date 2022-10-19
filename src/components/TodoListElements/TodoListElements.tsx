@@ -30,7 +30,7 @@ export const TodoListElements = ({
                 onChange={onComplete.bind(null, el.id)}
               />
               <TodoListElTitle
-                primary={el.isComplete && true}
+                primary={el.isComplete}
                 color={"#b4b4b4"}
                 decoration={"line-through"}
               >

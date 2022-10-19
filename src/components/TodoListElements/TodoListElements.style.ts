@@ -1,9 +1,9 @@
 import styled, { css } from "styled-components";
 
 interface ITitleProps {
-  primary: any;
-  color?: any;
-  decoration?: any;
+  primary?: boolean;
+  color?: string;
+  decoration?: string;
 }
 
 export const TodoListElLabel = styled.label`
