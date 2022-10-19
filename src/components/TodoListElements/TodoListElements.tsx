@@ -1,5 +1,6 @@
 import React from "react";
 import { ITodo } from "../../utils/models";
+import { TodoListElLabel, TodoListElTitle } from "./TodoListElements.style";
 
 interface ITodoListElementsProps {
   tasks: ITodo[];
@@ -22,20 +23,26 @@ export const TodoListElements = ({
 
         return (
           <li className={taskClass.join(" ")} key={el.id}>
-            <label className="todo-list__task-wrp">
+            <TodoListElLabel>
               <input
                 type="checkbox"
                 checked={el.isComplete}
                 onChange={onComplete.bind(null, el.id)}
               />
-              <span className="todo-list__title">{el.title}</span>
+              <TodoListElTitle
+                primary={el.isComplete && true}
+                color={"#b4b4b4"}
+                decoration={"line-through"}
+              >
+                {el.title}
+              </TodoListElTitle>
               <i
                 className="material-icons black-text"
                 onClick={onRemove.bind(null, el.id)}
               >
                 clear
               </i>
-            </label>
+            </TodoListElLabel>
           </li>
         );
       })}
