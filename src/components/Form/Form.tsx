@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { ITodo } from "../../utils/models";
-import { StyledForm } from "../../styled-components/StyledForm/StyledForm";
+import { FormStyle } from "./Form.style";
 
 interface IFormProps {
   tasks: ITodo[];
@@ -25,7 +25,7 @@ export const Form = ({ tasks, onTasks }: IFormProps) => {
   };
 
   return (
-    <StyledForm id="todoForm" name="todoForm" onSubmit={submitHandler}>
+    <FormStyle id="todoForm" name="todoForm" onSubmit={submitHandler}>
       <input
         ref={inputRef}
         type="text"
@@ -37,6 +37,6 @@ export const Form = ({ tasks, onTasks }: IFormProps) => {
       <label htmlFor="todo" className="active">
         Добавить задачу
       </label>
-    </StyledForm>
+    </FormStyle>
   );
 };
