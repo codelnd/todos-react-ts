@@ -1,5 +1,5 @@
-import { StyledEmptyList } from "../../styled-components/StyledEmptyList/StyledEmptyList";
+import { EmptyListStyle } from "./EmptyList.style";
 
 export const EmptyList = () => {
-  return <StyledEmptyList>Список задач пуст</StyledEmptyList>;
+  return <EmptyListStyle>Список задач пуст</EmptyListStyle>;
 };
