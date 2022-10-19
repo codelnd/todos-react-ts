@@ -3,8 +3,8 @@ import { ITodo } from "../../utils/models";
 
 interface ITodoListElementsProps {
   tasks: ITodo[];
-  onRemove: (id: number) => any;
-  onComplete: (id: number) => any;
+  onRemove: (id: number) => void;
+  onComplete: (id: number) => void;
 }
 
 export const TodoListElements = ({

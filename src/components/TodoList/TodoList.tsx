@@ -10,11 +10,11 @@ interface IFormProps {
 }
 
 export const TodoList = ({ tasks, onTasks }: IFormProps) => {
-  const removeHandler = (id: number) => {
+  const removeHandler = (id: number): void => {
     onTasks((prevState) => prevState.filter((el) => el.id !== id));
   };
 
-  const completeHandler = (id: number) => {
+  const completeHandler = (id: number): void => {
     onTasks((prevState) =>
       prevState.map((el) => {
         if (el.id === id) {
