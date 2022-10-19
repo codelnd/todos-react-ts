@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const EmptyListStyled = styled.p`
+export const StyledEmptyList = styled.p`
   margin-top: 50px;
   text-align: center;
   font-size: 20px;
