@@ -1,5 +1,5 @@
 import styled from "styled-components";
 
-export const StyledTitle = styled.h1`
+export const TodoTitleStyle = styled.h1`
   font-size: 12px;
 `;

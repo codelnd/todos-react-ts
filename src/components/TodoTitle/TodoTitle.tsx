@@ -1,9 +1,9 @@
-import { StyledTitle } from "../../styled-components/StyledTitle/StyledTitle";
+import { TodoTitleStyle } from "./TodoTitle.style";
 
 interface ITodoTitleProps {
   length: string;
 }
 
 export const TodoTitle = ({ length }: ITodoTitleProps) => {
-  return <StyledTitle>{`Количество дел: ${length}`}</StyledTitle>;
+  return <TodoTitleStyle>{`Количество дел: ${length}`}</TodoTitleStyle>;
 };
