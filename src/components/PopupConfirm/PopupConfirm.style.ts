@@ -43,3 +43,11 @@ export const PopupButton = styled.button`
   width: 50px;
   height: 25px;
 `;
+
+export const PopupCloseButton = styled.i.attrs({
+  className: "material-icons black-text",
+})`
+  position: absolute;
+  top: -18px;
+  right: -18px;
+`;

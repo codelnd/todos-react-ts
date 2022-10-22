@@ -4,6 +4,7 @@ import {
   PopupContainerStyle,
   PopupForm,
   PopupButton,
+  PopupCloseButton,
 } from "./PopupConfirm.style";
 
 export const PopupConfirm = () => {
@@ -14,6 +15,7 @@ export const PopupConfirm = () => {
           <PopupButton type="submit">Да</PopupButton>
           <PopupButton type="button">Нет</PopupButton>
         </PopupForm>
+        <PopupCloseButton>clear</PopupCloseButton>
       </PopupContainerStyle>
     </PopupStyle>
   );
