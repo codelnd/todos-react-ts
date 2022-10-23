@@ -9,7 +9,7 @@ import {
 
 export const PopupConfirm = () => {
   return (
-    <PopupStyle>
+    <PopupStyle opened={true}>
       <PopupContainerStyle>
         <PopupForm>
           <PopupButton type="submit">Да</PopupButton>

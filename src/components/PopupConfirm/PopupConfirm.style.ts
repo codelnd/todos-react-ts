@@ -1,4 +1,8 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+interface IPopupProps {
+  opened: boolean;
+}
 
 export const PopupStyle = styled.section`
   position: fixed;
@@ -11,9 +15,15 @@ export const PopupStyle = styled.section`
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  //visibility: hidden;
-  //opacity: 0;
+  visibility: hidden;
+  opacity: 0;
   transition: visibility 0.3s, opacity 0.3s linear;
+  ${(props: IPopupProps) =>
+    props.opened &&
+    css`
+      visibility: visible;
+      opacity: 1;
+    `}
 `;
 
 export const PopupContainerStyle = styled.div`
