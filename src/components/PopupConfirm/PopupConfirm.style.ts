@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
-export const PopupStyle = styled.section.attrs({
-  className: "popup_opened",
-})`
+export const PopupStyle = styled.section`
   position: fixed;
   background-color: rgba(0, 0, 0, 0.4);
   top: 0;
