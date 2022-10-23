@@ -7,9 +7,13 @@ import {
   PopupCloseButton,
 } from "./PopupConfirm.style";
 
-export const PopupConfirm = () => {
+interface IPopupProps {
+  isOpened: boolean;
+}
+
+export const PopupConfirm = ({ isOpened }: IPopupProps) => {
   return (
-    <PopupStyle opened={true}>
+    <PopupStyle opened={isOpened}>
       <PopupContainerStyle>
         <PopupForm>
           <PopupButton type="submit">Да</PopupButton>

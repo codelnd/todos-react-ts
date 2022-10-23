@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-interface IPopupProps {
+interface IPopupStyleProps {
   opened: boolean;
 }
 
@@ -18,7 +18,7 @@ export const PopupStyle = styled.section`
   visibility: hidden;
   opacity: 0;
   transition: visibility 0.3s, opacity 0.3s linear;
-  ${(props: IPopupProps) =>
+  ${(props: IPopupStyleProps) =>
     props.opened &&
     css`
       visibility: visible;

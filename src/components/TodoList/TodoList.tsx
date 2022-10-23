@@ -2,7 +2,6 @@ import React from "react";
 import { ITodo } from "../../utils/models";
 import { EmptyList } from "../EmptyList/EmptyList";
 import { TodoListElements } from "../TodoListElements/TodoListElements";
-import { PopupConfirm } from "../PopupConfirm/PopupConfirm";
 
 interface IFormProps {
   tasks: ITodo[];
@@ -37,7 +36,6 @@ export const TodoList = ({ tasks, onTasks }: IFormProps) => {
           onComplete={completeHandler}
         />
       )}
-      <PopupConfirm />
     </div>
   );
 };
