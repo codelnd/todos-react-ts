@@ -19,7 +19,7 @@ export const Form = ({ tasks, onTasks }: IFormProps) => {
       isComplete: false,
     };
     if (inputRef.current!.value !== "") {
-      onTasks((prevState) => [task, ...tasks]);
+      onTasks(() => [task, ...tasks]);
     }
     inputRef.current!.value = "";
   };
