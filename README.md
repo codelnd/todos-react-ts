@@ -45,3 +45,12 @@ npm install
 npm run start // Запуск dev сервера
 npm run build // Сборка проекта
 ```
+
+## Ссылки:
+
+**https://codelnd.github.io/todos-react-ts/**
+
+*зажмите Command (MacOS) или Ctrl (Windows) при клике по ссылке, чтобы перейти по ней в новом окне.
+
+
+
