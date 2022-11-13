@@ -7,15 +7,16 @@ interface ITitleProps {
 }
 
 export const TodoListElLabel = styled.label`
-  box-shadow: 3px 3px 8px 1px rgba(34, 60, 80, 0.2);
+  background: #f6f6f6;
   padding: 8px;
   margin-top: 30px;
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 75px;
+  height: 100px;
   border-radius: 10px;
+  cursor: pointer;
 `;
 
 export const TodoListElTitle = styled.span`
