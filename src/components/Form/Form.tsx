@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { ITodo } from "../../utils/models";
+import { ITodo } from "../../models/models";
 import { FormStyle } from "./Form.style";
 
 interface IFormProps {

@@ -1,5 +1,5 @@
 import React from "react";
-import { ITodo } from "../../utils/models";
+import { ITodo } from "../../models/models";
 import { TodoListElLabel, TodoListElTitle } from "./TodoListElements.style";
 
 interface ITodoListElementsProps {
