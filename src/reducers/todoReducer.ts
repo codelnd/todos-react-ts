@@ -1,9 +1,6 @@
-const initialState: [] | Array<object> = [];
+import { ITodoAction } from "../models/models";
 
-interface ITodoAction {
-  type: string;
-  payload?: any;
-}
+const initialState: [] | Array<object> = [];
 
 export const todoReducer = (state = initialState, action: ITodoAction) => {
   switch (action.type) {

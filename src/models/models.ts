@@ -3,3 +3,8 @@ export interface ITodo {
   title: string;
   isComplete: boolean;
 }
+
+export interface ITodoAction {
+  type: string;
+  payload?: any;
+}
