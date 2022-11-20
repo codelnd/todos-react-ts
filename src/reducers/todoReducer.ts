@@ -1,14 +1,8 @@
-import { ITodoAction } from "../models/models";
+import { TodoActionType, TodoActionTypes } from "../models/models";
 
 const initialState: [] | Array<object> = [];
 
-enum TodoActionTypes {
-  ADD_TODO = "ADD_TODO",
-  COMPLETE_TODO = "COMPLETE_TODO",
-  REMOVE_TODO = "REMOVE_TODO",
-}
-
-export const todoReducer = (state = initialState, action: ITodoAction) => {
+export const todoReducer = (state = initialState, action: TodoActionType) => {
   switch (action.type) {
     case TodoActionTypes.ADD_TODO:
       return [
