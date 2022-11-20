@@ -1,6 +1,11 @@
 const initialState: [] | Array<object> = [];
 
-export const todoReducer = (state = initialState, action) => {
+interface ITodoAction {
+  type: string;
+  payload?: any;
+}
+
+export const todoReducer = (state = initialState, action: ITodoAction) => {
   switch (action.type) {
     case "ADD_TODO":
       return [
@@ -12,9 +17,16 @@ export const todoReducer = (state = initialState, action) => {
         },
       ];
     case "COMPLETE_TODO":
-      return;
+      return state.map((el: any) => {
+        if (el.id === action.payload) {
+          el.isComplete = !el.isComplete;
+        }
+        return el;
+      });
     case "REMOVE_TODO":
-      return;
+      return state.filter((el: any) => {
+        return el.id !== action.payload;
+      });
     default:
       return state;
   }
