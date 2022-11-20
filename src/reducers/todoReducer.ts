@@ -1,6 +1,6 @@
 import { TodoActionType, TodoActionTypes } from "../models/models";
 
-const initialState: [] | Array<object> = [];
+const initialState: [] | Array<Object> = [];
 
 export const todoReducer = (state = initialState, action: TodoActionType) => {
   switch (action.type) {
