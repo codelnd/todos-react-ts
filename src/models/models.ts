@@ -1,3 +1,5 @@
+import { rootReducer } from "../reducers/rootReducer";
+
 export interface ITodo {
   id: number;
   title: string;
@@ -26,3 +28,5 @@ export interface IRemoveAction {
 }
 
 export type TodoActionType = IAddAction | ICompleteAction | IRemoveAction;
+
+export type RootStateType = ReturnType<typeof rootReducer>;
