@@ -6,12 +6,12 @@ export const todoReducer = (state = initialState, action: TodoActionType) => {
   switch (action.type) {
     case TodoActionTypes.ADD_TODO:
       return [
-        ...state,
         {
           id: Date.now(),
           title: action.payload,
           isComplete: false,
         },
+        ...state,
       ];
     case TodoActionTypes.COMPLETE_TODO:
       return state.map((el: any) => {
