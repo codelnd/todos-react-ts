@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { FormStyle } from "./Form.style";
 import { useDispatch } from "react-redux";
-import { TodoActionTypes } from "../../models/models";
+import { addTodo } from "../../action-creators/actionCreators";
 
 export const Form = () => {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -10,10 +10,7 @@ export const Form = () => {
   const submitHandler = (e: React.ChangeEvent<HTMLFormElement>): void => {
     e.preventDefault();
     if (inputRef.current!.value !== "") {
-      dispatch({
-        type: TodoActionTypes.ADD_TODO,
-        payload: inputRef.current!.value,
-      });
+      dispatch(addTodo(inputRef.current!.value));
     }
     inputRef.current!.value = "";
   };
