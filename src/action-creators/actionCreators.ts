@@ -6,3 +6,17 @@ export const addTodo = (payload: string) => {
     payload,
   };
 };
+
+export const CompleteTodo = (payload: string) => {
+  return {
+    type: TodoActionTypes.COMPLETE_TODO,
+    payload,
+  };
+};
+
+export const RemoveTodo = (payload: string) => {
+  return {
+    type: TodoActionTypes.REMOVE_TODO,
+    payload,
+  };
+};
