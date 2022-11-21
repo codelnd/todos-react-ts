@@ -10,7 +10,7 @@ const App = () => {
   return (
     <Container>
       <TodoTitle />
-      <Form tasks={tasks} onTasks={setTasks} />
+      <Form />
       <TodoList tasks={tasks} onTasks={setTasks} />
     </Container>
   );

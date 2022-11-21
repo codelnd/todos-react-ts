@@ -1,25 +1,19 @@
 import React, { useRef } from "react";
-import { ITodo } from "../../models/models";
 import { FormStyle } from "./Form.style";
+import { useDispatch } from "react-redux";
+import { TodoActionTypes } from "../../models/models";
 
-interface IFormProps {
-  tasks: ITodo[];
-
-  onTasks(p: (prevState: ITodo[]) => ITodo[]): void;
-}
-
-export const Form = ({ tasks, onTasks }: IFormProps) => {
+export const Form = () => {
   const inputRef = useRef<HTMLInputElement>(null);
+  const dispatch = useDispatch();
 
   const submitHandler = (e: React.ChangeEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    const task: ITodo = {
-      id: Date.now(),
-      title: inputRef.current!.value,
-      isComplete: false,
-    };
     if (inputRef.current!.value !== "") {
-      onTasks(() => [task, ...tasks]);
+      dispatch({
+        type: TodoActionTypes.ADD_TODO,
+        payload: inputRef.current!.value,
+      });
     }
     inputRef.current!.value = "";
   };
