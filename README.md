@@ -1,10 +1,21 @@
-# Список задач на TypeScript + React
+# Список задач на TypeScript, React, Redux
 
 ***
 
-## ToDo List - pet-project, выполненный с применением TypeScript + React + Styled Components
+## Todo List - выполнен с применением языка TypeScript, библиотеки React, стейт-менеджера Redux и стилизации на Styled Components
 
 ## Описание проекта:
+
+v.1.2 - Что нового:
+
+- Добавлен Redux 
+- Добавлен Redux-persist
+
+v.1.1 - Что нового:
+
+- Стили компонентов переписаны на Styled Components
+
+v.1.0
 
 Пользователь вводит в строку нужную задачу и сохраняет ее. После этого веб-приложение должно выполнить два действия:
 
@@ -16,12 +27,13 @@
 - Отправка формы с нужной задачей в todo list
 - Изменение статуса выполнения задачи
 - Возможность удалить ненужные задачи
-- Сохранение данных в LocalStorage
+- Сохранение стейта Redux в LocalStorage
 
 
 ## Стек технологий:
 ![TypeScript](https://img.shields.io/badge/-typescript-000?style=for-the-badge&logo=typescript)
-![ReactJs](https://img.shields.io/badge/-React-000?style=for-the-badge&logo=react)
+![React](https://img.shields.io/badge/-React-000?style=for-the-badge&logo=react)
+![Redux](https://img.shields.io/badge/-Redux-000?style=for-the-badge&logo=redux)
 ![Styled_Components](https://img.shields.io/badge/-Styled_Components-000?style=for-the-badge&logo=styledcomponents)
 ![Webpack](https://img.shields.io/badge/-webpack-000?style=for-the-badge&logo=webpack)
 ![HTML](https://img.shields.io/badge/-HTML-000?style=for-the-badge&logo=html5)
@@ -36,8 +48,9 @@ npm install
 ```
 
 ## Планы по доработке:
+- ~~Добавить стейт менеджер~~
+- ~~Стилизация на Styled Components~~
 - Добавить popup подтверждения удаления задачи
-- Добавить стейт менеджер
 
 
 ## CLI:
