@@ -1,9 +1,8 @@
 import { TodoTitleStyle } from "./TodoTitle.style";
+import useTypedSelector from "../../hooks/useTypedSelector";
 
-interface ITodoTitleProps {
-  length: string;
-}
+export const TodoTitle = () => {
+  const state = useTypedSelector((state) => state.todo);
 
-export const TodoTitle = ({ length }: ITodoTitleProps) => {
-  return <TodoTitleStyle>{`Количество дел: ${length}`}</TodoTitleStyle>;
+  return <TodoTitleStyle>{`Количество дел: 0`}</TodoTitleStyle>;
 };
