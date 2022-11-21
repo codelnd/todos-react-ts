@@ -7,14 +7,14 @@ export const addTodo = (payload: string) => {
   };
 };
 
-export const CompleteTodo = (payload: string) => {
+export const completeTodo = (payload: string) => {
   return {
     type: TodoActionTypes.COMPLETE_TODO,
     payload,
   };
 };
 
-export const RemoveTodo = (payload: string) => {
+export const removeTodo = (payload: string) => {
   return {
     type: TodoActionTypes.REMOVE_TODO,
     payload,
